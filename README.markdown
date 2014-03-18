@@ -12,3 +12,4 @@ This project is an app (hack) to prevent a heroku app from sleeping when it uses
 only works if you have a "web" heroku app which exposes a [safe HTTP method](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)
 that can be used as a ping endpoint periodically.
 
+
