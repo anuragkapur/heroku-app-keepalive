@@ -1,1 +1,1 @@
-scheduler:  java $JAVA_OPTS -cp jobs/target/classes:jobs/target/dependency/* com.anuragkapur.heroku.keepalive.SchedulerMain
+scheduler:  java $JAVA_OPTS -cp target/classes:jobs/target/dependency/* com.anuragkapur.heroku.keepalive.SchedulerMain
