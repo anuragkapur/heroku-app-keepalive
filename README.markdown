@@ -14,7 +14,7 @@ to use an endpoint using a [safe HTTP method](http://www.w3.org/Protocols/rfc261
 periodically.
 
 ###Configuration
-Configure a comma separated list of urls in [src/resource/app.properties](src/resource/app.properties). There are two
+Configure a comma separated list of urls in [src/resource/app.properties](src/main/resource/app.properties). There are two
 sets of urls that can be configured
 
 * Urls to HTTP GET (safe method)
