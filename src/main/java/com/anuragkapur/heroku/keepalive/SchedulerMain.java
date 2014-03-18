@@ -1,10 +1,7 @@
 package com.anuragkapur.heroku.keepalive;
 
-import org.quartz.Job;
 import org.quartz.JobBuilder;
 import org.quartz.JobDetail;
-import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.SimpleScheduleBuilder;
@@ -27,11 +24,11 @@ public class SchedulerMain {
 
         Scheduler scheduler;
 
-        JobDetail jobDetail = JobBuilder.newJob(HelloJob.class).build();
+        JobDetail jobDetail = JobBuilder.newJob(HttpRequestJob.class).build();
 
         Trigger trigger = TriggerBuilder.newTrigger()
                 .startNow()
-                .withSchedule(SimpleScheduleBuilder.repeatSecondlyForever(2))
+                .withSchedule(SimpleScheduleBuilder.repeatMinutelyForever(10))
                 .build();
 
         try {
@@ -39,15 +36,7 @@ public class SchedulerMain {
             scheduler.start();
             scheduler.scheduleJob(jobDetail, trigger);
         } catch (SchedulerException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static class HelloJob implements Job {
-
-        @Override
-        public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-            LOGGER.info("HelloJob executed");
+            LOGGER.error("SchedulerException {}", e);
         }
     }
 }
