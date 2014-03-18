@@ -2,7 +2,7 @@ Heroku-App-KeepAlive
 ====================
 
 ###TL;DR
-An app (hack) that prevents an heroku app from sleeping by periodically send a ping request over HTTP.
+An app (hack) that prevents an heroku app from sleeping by periodically sending a ping request over HTTP.
 
 ###Introduction
 By default, if your heroku app uses a single dyno (which comes for free), it sleeps after 1 hour of inactivity. This
