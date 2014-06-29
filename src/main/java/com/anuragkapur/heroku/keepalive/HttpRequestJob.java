@@ -56,6 +56,7 @@ public class HttpRequestJob implements Job {
             LOGGER.error("Exception occurred {}", e);
         }finally {
             try {
+                assert response != null;
                 response.close();
             } catch (IOException e) {
                 LOGGER.error("Exception occurred {}", e);
@@ -74,6 +75,7 @@ public class HttpRequestJob implements Job {
             LOGGER.error("Exception occurred {}", e);
         }finally {
             try {
+                assert response != null;
                 response.close();
             } catch (IOException e) {
                 LOGGER.error("Exception occurred {}", e);
